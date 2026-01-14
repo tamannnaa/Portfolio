@@ -144,7 +144,7 @@ body {
   right: 80px;
   width: 600px;
   height: 360px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .intro-bg {
@@ -261,17 +261,25 @@ body {
   color: #ccc;
 }
 
+/* Ensure desc width is responsive */
+@media (max-width: 768px) {
+  .identity-desc {
+    width: 100%;
+  }
+}
+
 /* RIGHT IMAGE */
 .identity-right {
   width: 420px;
   height: 520px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .identity-right img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 }
 
 /* BOTTOM BAR */
@@ -288,6 +296,10 @@ body {
   padding-bottom: 22px;
   font-size: 14px;
   letter-spacing: 1px;
+}
+
+.identity-traits span {
+  white-space: nowrap;
 }
 
 /* ================= PERSONAL SKILLS ================= */
@@ -623,7 +635,7 @@ body {
 
 .proj-images img {
   width: 50%;
-  height: 160px;
+  height: 280px;
   object-fit: cover;
 }
 
@@ -644,12 +656,15 @@ body {
 /* ============== PROJECT 01 ================= */
 
 .project-one {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #220413, #28000d);
   padding: 80px 100px;
   color: white;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Header */
@@ -658,14 +673,17 @@ body {
   justify-content: space-between;
   font-size: 14px;
   opacity: 0.8;
+  margin-bottom: 40px;
 }
 
 /* Layout */
 .p1-content {
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 180px);
-  margin-top: 60px;
+  gap: 60px;
+  align-items: flex-start;
+  flex-grow: 1;
+  min-height: auto;
 }
 
 /* Left text */
@@ -673,6 +691,7 @@ body {
   width: 45%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
 .p1-left h2 {
@@ -725,6 +744,7 @@ body {
   width: 50%;
   position: relative;
   overflow: hidden;
+  min-height: 300px;
 }
 
 .p1-right img {
@@ -744,12 +764,15 @@ body {
 /* ============== PROJECT 02 ================= */
 
 .project-two {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #1b0b12, #2a0d1a);
   padding: 80px 100px;
   color: white;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Header */
@@ -758,52 +781,57 @@ body {
   justify-content: space-between;
   font-size: 14px;
   opacity: 0.8;
+  margin-bottom: 40px;
 }
 
 /* Layout */
 .p2-content {
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 180px);
-  margin-top: 60px;
+  gap: 60px;
+  align-items: flex-start;
+  flex-grow: 1;
+  min-height: auto;
 }
 
-/* LEFT IMAGE */
+/* LEFT TEXT */
 .p2-left {
-  width: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.p2-left img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* RIGHT TEXT */
-.p2-right {
   width: 45%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
-.p2-right h2 {
+.p2-left h2 {
   font-family: 'Playfair Display', serif;
   font-size: 70px;
   margin-bottom: 10px;
 }
 
-.p2-right h3 {
+.p2-left h3 {
   font-size: 28px;
   margin-bottom: 20px;
 }
 
-/* Content block */
+/* RIGHT IMAGE */
+.p2-right {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.p2-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
 .p2-desc {
   font-size: 14px;
   line-height: 1.7;
-  color: #ddd;
+  color: #ccc;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -811,7 +839,9 @@ body {
 .p2-points {
   list-style: disc;
   margin-left: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
+  color: #ddd;
 }
 
 .p2-points li {
@@ -820,14 +850,14 @@ body {
 
 /* Github */
 .p2-link {
+  margin-top: 10px;
   color: white;
   text-decoration: underline;
   font-size: 14px;
 }
 
-/* Page */
+/* Page number */
 .p2-page {
-  margin-top: auto;
   font-size: 14px;
   opacity: 0.8;
 }
@@ -835,12 +865,15 @@ body {
 /* ============== PROJECT 03 ================= */
 
 .project-three {
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #1b0b12, #2a0d1a);
   padding: 80px 100px;
   color: white;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Header */
@@ -849,14 +882,17 @@ body {
   justify-content: space-between;
   font-size: 14px;
   opacity: 0.8;
+  margin-bottom: 40px;
 }
 
 /* Layout */
 .p3-content {
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 180px);
-  margin-top: 60px;
+  gap: 60px;
+  align-items: flex-start;
+  flex-grow: 1;
+  min-height: auto;
 }
 
 /* LEFT TEXT */
@@ -915,6 +951,7 @@ body {
   width: 50%;
   position: relative;
   overflow: hidden;
+  min-height: 300px;
 }
 
 .p3-right img {
@@ -1091,12 +1128,13 @@ body {
 
   .profile-frame {
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 280px;
     height: 360px;
     border-radius: 200px 200px 0 0;
+    z-index: 10;
   }
 
   /* INTRO */
@@ -1122,6 +1160,7 @@ body {
     width: 100%;
     height: 300px;
     margin-bottom: 30px;
+    overflow: visible;
   }
 
   .intro-title {
@@ -1136,6 +1175,7 @@ body {
   .identity {
     height: auto;
     padding: 50px 30px;
+    position: relative;
   }
 
   .identity-content {
@@ -1153,20 +1193,35 @@ body {
     height: 300px;
   }
 
+  .identity-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
   .identity-name {
     font-size: 48px;
   }
 
   .identity-traits {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: absolute;
+    right: 200px;
+    top: auto;
+    bottom: 100px;
+    left: auto;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     border: none;
-    padding: 20px 0;
-    margin-top: 30px;
+    padding: 0;
+    margin-top: 0;
+    align-items: flex-start;
+    font-size: 11px;
+  }
+
+  .identity-traits span {
+    white-space: nowrap;
+    flex: 0 1 auto;
   }
 
   /* SKILLS */
@@ -1284,8 +1339,9 @@ body {
   .project-one,
   .project-two,
   .project-three {
-    height: auto;
+    min-height: auto;
     padding: 50px 30px;
+    display: block;
   }
 
   .p1-content,
@@ -1294,24 +1350,37 @@ body {
     flex-direction: column;
     height: auto;
     margin-top: 30px;
+    gap: 30px;
+    align-items: flex-start;
   }
 
   .p1-left,
-  .p2-right,
+  .p2-left,
   .p3-left {
     width: 100%;
+    margin-bottom: 0;
   }
 
   .p1-right,
-  .p2-left,
+  .p2-right,
   .p3-right {
     width: 100%;
-    height: 240px;
-    margin-top: 30px;
+    height: 280px;
+    margin-top: 0;
+    min-height: 280px;
+  }
+
+  .p1-right img,
+  .p2-right img,
+  .p3-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
   }
 
   .p1-left h2,
-  .p2-right h2,
+  .p2-left h2,
   .p3-left h2 {
     font-size: 42px;
   }
@@ -1357,12 +1426,13 @@ body {
 
   .profile-frame {
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 240px;
     height: 350px;
     border-radius: 180px 180px 0 0;
+    z-index: 10;
   }
 
   .bg-image {
@@ -1476,7 +1546,8 @@ body {
   .proj-large img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   .proj-right {
@@ -1492,7 +1563,13 @@ body {
   .proj-images img {
     width: 100%;
     height: 160px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .p2-right img {
+    object-fit: contain;
+    object-position: center;
   }
 
   /* CONTACT - Everything visible */
@@ -1580,13 +1657,14 @@ body {
 
   .profile-frame {
     position: absolute;
-    bottom: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -50%);
     width: 200px;
     height: 300px;
     border-radius: 150px 150px 0 0;
     padding: 8px;
+    z-index: 10;
   }
 
   .bg-image {
@@ -1674,10 +1752,18 @@ body {
   /* IDENTITY */
   .identity {
     padding: 30px 15px;
+    min-height: auto;
+  }
+
+  .identity-content {
+    flex-direction: column;
+    transform: translateY(0);
+    gap: 20px;
   }
 
   .identity-left {
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 0;
   }
 
   .identity-name {
@@ -1686,24 +1772,39 @@ body {
 
   .identity-desc {
     font-size: 11px;
+    width: 100%;
   }
 
   .identity-right {
+    width: 100%;
     height: 220px;
   }
 
+  .identity-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
   .identity-traits {
+    position: absolute;
+    right: 10px;
+    top: auto;
+    bottom: 80px;
+    left: auto;
     font-size: 10px;
-    padding: 15px 0;
-    margin-top: 20px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+    padding: 0;
+    margin-top: 0;
+    flex-direction: column;
+    gap: 8px;
     border: none;
+    align-items: flex-start;
   }
 
   .identity-traits span {
     flex: 0 1 auto;
+    white-space: nowrap;
   }
 
   /* SKILLS */
@@ -1832,7 +1933,8 @@ body {
   .proj-large img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   .proj-right {
@@ -1848,7 +1950,8 @@ body {
   .proj-images img {
     width: 100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   .proj-text {
@@ -1860,7 +1963,9 @@ body {
   .project-one,
   .project-two,
   .project-three {
+    min-height: auto;
     padding: 30px 15px;
+    display: block;
   }
 
   .p1-header,
@@ -1869,6 +1974,7 @@ body {
     flex-direction: column;
     gap: 15px;
     font-size: 10px;
+    margin-bottom: 25px;
   }
 
   .p1-content,
@@ -1876,39 +1982,41 @@ body {
   .p3-content {
     flex-direction: column;
     height: auto;
+    gap: 25px;
+    align-items: flex-start;
   }
 
   .p1-left,
-  .p2-right,
+  .p2-left,
   .p3-left {
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 0;
   }
 
   .p1-left h2,
-  .p2-right h2,
+  .p2-left h2,
   .p3-left h2 {
-    font-size: 28px;
+    font-size: 36px;
   }
 
   .p1-left h3,
-  .p2-right h3,
+  .p2-left h3,
   .p3-left h3 {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 15px;
   }
 
   .p1-desc,
   .p2-desc,
   .p3-desc {
-    font-size: 11px;
+    font-size: 13px;
     line-height: 1.6;
   }
 
   .p1-points,
   .p2-points,
   .p3-points {
-    font-size: 10px;
+    font-size: 11px;
     margin: 10px 0 15px;
     line-height: 1.6;
   }
@@ -1920,18 +2028,20 @@ body {
   }
 
   .p1-right,
-  .p2-left,
+  .p2-right,
   .p3-right {
     width: 100%;
-    height: 180px;
+    height: 220px;
+    min-height: 220px;
   }
 
   .p1-right img,
-  .p2-left img,
+  .p2-right img,
   .p3-right img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
   }
 
   .p1-page,
@@ -2029,6 +2139,59 @@ body {
 
 /* ---------- SMALL MOBILE (360px) ---------- */
 @media (max-width: 360px) {
+  /* IDENTITY - Better layout for tiny screens */
+  .identity {
+    padding: 25px 12px;
+    min-height: auto;
+  }
+
+  .identity-content {
+    flex-direction: column;
+    transform: translateY(0);
+    gap: 20px;
+  }
+
+  .identity-left {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .identity-right {
+    width: 100%;
+    height: 200px;
+  }
+
+  .identity-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .hello-text {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .identity-traits {
+    position: absolute;
+    right: 10px;
+    top: auto;
+    bottom: 60px;
+    left: auto;
+    flex-direction: column;
+    gap: 8px;
+    border: none;
+    padding: 0;
+    margin-top: 0;
+    align-items: flex-start;
+  }
+
+  .identity-traits span {
+    font-size: 9px;
+    flex: 0 1 auto;
+  }
+
   .hero-left h1 {
     font-size: 28px;
   }
@@ -2038,8 +2201,13 @@ body {
   }
 
   .profile-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 180px;
     height: 270px;
+    z-index: 10;
   }
 
   .intro-title,
@@ -2052,7 +2220,7 @@ body {
   }
 
   .p1-left h2,
-  .p2-right h2,
+  .p2-left h2,
   .p3-left h2 {
     font-size: 24px;
   }

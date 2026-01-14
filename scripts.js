@@ -5,14 +5,18 @@ let open = false;
 
 toggle.addEventListener("click", () => {
   open = !open;
+  
+  // Responsive Radius: Smaller radius for mobile screens
+  const isMobile = window.innerWidth <= 768;
+  const radius = open ? (isMobile ? 90 : 120) : 0; 
 
-  const start = Math.PI * 0.9;   // 200°
-  const end   = Math.PI * 1.6;   // 325°
+  // Adjust angles slightly for mobile to keep buttons on screen
+  const start = Math.PI * (isMobile ? 1.0 : 0.9);   
+  const end   = Math.PI * (isMobile ? 1.5 : 1.6);   
   const step  = (end - start) / (items.length - 1);
 
   items.forEach((item, i) => {
     const angle = start + step * i;
-    const radius = open ? 120 : 0;
 
     const x = Math.cos(angle) * radius;
     const y = Math.sin(angle) * radius;
@@ -22,10 +26,13 @@ toggle.addEventListener("click", () => {
   });
 });
 
-/* Scroll */
+/* Scroll Smoothly */
 items.forEach(btn => {
   btn.addEventListener("click", (e) => {
-    e.stopPropagation(); // ⬅ stops toggle click
+    e.stopPropagation(); 
+    // Close menu after clicking a link
+    if(open) toggle.click(); 
+    
     document.querySelector(btn.dataset.target)
       .scrollIntoView({ behavior: "smooth" });
   });

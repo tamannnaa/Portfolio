@@ -311,13 +311,16 @@ body {
 }
 
 
+
+
 /* LEFT PANEL */
 .skills-left {
   width: 58%;
   position: relative;
-  padding: 100px;
-  padding-bottom: 140px;   /* space from bottom */
+  padding: 60px 80px;
+  padding-bottom: 60px;   /* space from bottom */
 }
+
 
 
 .skills-title {
